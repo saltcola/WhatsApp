@@ -2,11 +2,11 @@ import {Chats} from "../../../both/collections/chats.collection";
 import {Messages} from "../../../both/collections/messages.collection";
 import {Users} from '../../../both/collections/users.collection';
 import {Accounts} from 'meteor/accounts-base';
- 
+
 export class Main {
   start(): void {
     if (Users.collection.find().count()) return;
- 
+
     [{
       phone: '+972540000001',
       profile: {

@@ -1,10 +1,10 @@
 import {Component} from "@angular/core";
 import {ChatsComponent} from "../chats/chats.component";
- 
+
 @Component({
   selector: "tabs-container",
   template: `
-  <ion-tabs color="whatsapp" >
+  <ion-tabs color="whatsapp">
     <ion-tab [root]="chatsRoot" tabIcon="chatboxes"></ion-tab>
     <ion-tab tabIcon="contacts"></ion-tab>
     <ion-tab tabIcon="star"></ion-tab>
@@ -14,7 +14,8 @@ import {ChatsComponent} from "../chats/chats.component";
 })
 export class TabsContainerComponent {
   chatsRoot = ChatsComponent;
+
   constructor() {
- 
+
   }
 }

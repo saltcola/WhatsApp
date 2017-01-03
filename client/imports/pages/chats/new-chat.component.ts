@@ -29,7 +29,7 @@ export class NewChatComponent implements OnInit {
   ) {
     this.senderId = Meteor.userId();
   }
- 
+
   ngOnInit() {
     MeteorObservable.autorun().zone().subscribe(() => {
       this.users = this.findUsers().zone();

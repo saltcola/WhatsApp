@@ -4,7 +4,7 @@ import {Meteor} from 'meteor/meteor';
 import {MeteorObservable} from 'meteor-rxjs';
 import {Profile} from '../../../../both/models/profile.model';
 import {TabsContainerComponent} from '../tabs-container/tabs-container.component';
- 
+
 import template from './profile.component.html';
 import style from './profile.component.scss';
  
@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
     private navCtrl: NavController,
     private alertCtrl: AlertController
   ) {}
- 
+
   ngOnInit(): void {
     this.profile = Meteor.user().profile || {
       name: '',
