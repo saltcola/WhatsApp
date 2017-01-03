@@ -1,5 +1,6 @@
 {
   "globalDependencies": {
+    "meteor-accounts-phone": "registry:dt/meteor-accounts-phone#0.0.21+20161005184000",
     "moment": "registry:dt/moment#2.11.1+20161010105546"
   }
 }

@@ -25,3 +25,6 @@ mys:fonts
 mobile-status-bar
 launch-screen
 check
+npm-bcrypt
+accounts-base
+mys:accounts-phone

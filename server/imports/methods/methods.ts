@@ -2,6 +2,7 @@ import {Meteor} from 'meteor/meteor';
 import {Chats} from "../../../both/collections/chats.collection";
 import {Messages} from "../../../both/collections/messages.collection";
 import {check, Match} from 'meteor/check';
+import {Profile} from '../../../both/models/profile.model';
  
 const nonEmptyString = Match.Where((str) => {
   check(str, String);
@@ -9,6 +10,20 @@ const nonEmptyString = Match.Where((str) => {
 });
  
 Meteor.methods({
+  updateProfile(profile: Profile): void {
+
+    if (!this.userId) throw new Meteor.Error('unauthorized',
+      'User must be logged-in to create a new chat');
+ 
+    check(profile, {
+      name: nonEmptyString,
+      picture: nonEmptyString
+    });
+ 
+    Meteor.users.update(this.userId, {
+      $set: {profile}
+    });
+  },
   addMessage(chatId: string, content: string): void {
     check(chatId, nonEmptyString);
     check(content, nonEmptyString);
@@ -20,6 +35,7 @@ Meteor.methods({
  
     Messages.collection.insert({
       chatId: chatId,
+      senderId: this.userId,
       content: content,
       createdAt: new Date()
     });
