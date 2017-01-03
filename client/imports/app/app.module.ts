@@ -7,6 +7,7 @@ import { IonicApp, IonicModule } from "ionic-angular";
 import {TabsContainerComponent} from "../pages/tabs-container/tabs-container.component";
 import {ChatsComponent} from "../pages/chats/chats.component";
 import {MomentModule} from "angular2-moment";
+import {MessagesPage} from "../pages/chat/messages-page.component";
 
 
 
@@ -15,13 +16,15 @@ import {MomentModule} from "angular2-moment";
   declarations: [
     AppComponent,
     TabsContainerComponent,
-    ChatsComponent
+    ChatsComponent,
+    MessagesPage
   ],
   // Entry Components
   entryComponents: [
     AppComponent,
     TabsContainerComponent,
-    ChatsComponent
+    ChatsComponent,
+    MessagesPage
   ],
   // Providers
   providers: [
